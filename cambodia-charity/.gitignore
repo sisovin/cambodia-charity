@@ -13,3 +13,7 @@ yarn-error.log
 .next/
 out/
 build/
+
+# Custom additions
+apps/web/.next/
+apps/api/dist/

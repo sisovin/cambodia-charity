@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['example.com'],
+    domains: ['example.com', 'localhost'],
   },
   env: {
     CUSTOM_KEY: 'my-custom-key',

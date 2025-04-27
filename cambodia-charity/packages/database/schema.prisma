@@ -24,3 +24,19 @@ model Donation {
 
   user User @relation(fields: [userId], references: [id])
 }
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String
+  price     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogPost {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
