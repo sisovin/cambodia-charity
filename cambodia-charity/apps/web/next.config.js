@@ -21,6 +21,7 @@ const nextConfig = {
       },
     ];
   },
+  basePath: '/web',
 };
 
 module.exports = nextConfig;
