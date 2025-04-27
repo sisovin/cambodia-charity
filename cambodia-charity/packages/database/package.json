@@ -5,7 +5,7 @@
   "scripts": {
     "migrate": "prisma migrate dev",
     "generate": "prisma generate",
-    "seed": "ts-node ./seeds"
+    "seed": "ts-node ./prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^2.0.0",
