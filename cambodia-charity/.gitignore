@@ -17,3 +17,6 @@ build/
 # Custom additions
 apps/web/.next/
 apps/api/dist/
+
+# TurboRepo
+.turbo/
