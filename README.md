@@ -27,6 +27,52 @@ Welcome to the Cambodia Charity project! This monorepo includes a Next.js fronte
 - Access frontend: `http://localhost:3000`
 - Access backend: `http://localhost:4000`
 
+## TurboRepo and pnpm Workspaces
+
+This project uses TurboRepo for task orchestration and pnpm workspaces for managing dependencies in a monorepo setup.
+
+### Setting up TurboRepo
+
+1. Install TurboRepo globally: `pnpm add -g turbo`
+2. Add TurboRepo as a dev dependency in the root `package.json`:
+   ```json
+   {
+     "devDependencies": {
+       "turbo": "^1.0.0"
+     }
+   }
+   ```
+3. Create a `turbo.json` file in the root of the project with the following content:
+   ```json
+   {
+     "$schema": "https://turbo.build/schema.json",
+     "pipeline": {
+       "build": {
+         "dependsOn": ["^build"],
+         "outputs": [".next/**", "dist/**"]
+       },
+       "lint": {
+         "outputs": []
+       },
+       "test": {
+         "outputs": []
+       },
+       "dev": {
+         "cache": false
+       }
+     }
+   }
+   ```
+
+### Setting up pnpm Workspaces
+
+1. Create a `pnpm-workspace.yaml` file in the root of the project with the following content:
+   ```yaml
+   packages:
+     - 'apps/*'
+     - 'packages/*'
+   ```
+
 ## Contributing
 
 We welcome contributions to the Cambodia Charity project! Please follow these guidelines:
