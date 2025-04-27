@@ -1,0 +1,18 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "Database schema and client for Cambodia Charity project",
+  "scripts": {
+    "migrate": "prisma migrate dev",
+    "generate": "prisma generate",
+    "seed": "ts-node ./seeds"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^2.0.0"
+  }
+}

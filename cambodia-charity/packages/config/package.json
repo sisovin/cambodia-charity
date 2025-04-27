@@ -1,0 +1,9 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "description": "Shared configuration for Cambodia Charity project",
+  "dependencies": {
+    "eslint": "^7.0.0",
+    "typescript": "^4.0.0"
+  }
+}
