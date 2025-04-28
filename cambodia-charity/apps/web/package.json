@@ -6,7 +6,11 @@
     "dev": "pnpm dev",
     "build": "pnpm build",
     "start": "pnpm start",
-    "lint": "pnpm lint"
+    "lint": "pnpm lint",
+    "test:unit": "jest",
+    "test:integration": "jest --config jest.integration.config.js",
+    "test:e2e": "jest --config jest.e2e.config.js",
+    "build:docker": "docker build -t web ."
   },
   "dependencies": {
     "next": "^12.0.0",

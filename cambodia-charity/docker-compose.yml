@@ -4,17 +4,18 @@ services:
   web:
     build:
       context: ./apps/web
+      dockerfile: Dockerfile.prod
     ports:
       - '3000:3000'
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/cambodia_charity
     volumes:
       - ./apps/web:/app
     depends_on:
       - api
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -22,10 +23,11 @@ services:
   api:
     build:
       context: ./apps/api
+      dockerfile: Dockerfile.prod
     ports:
       - '4000:4000'
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/cambodia_charity
     volumes:
       - ./apps/api:/app
