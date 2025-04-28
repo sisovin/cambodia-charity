@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { DonationsModule } from './donations/donations.module';
 import { ShopModule } from './shop/shop.module';
 import { BlogModule } from './blog/blog.module';
+import { SharedModule } from '@shared/shared.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { BlogModule } from './blog/blog.module';
     DonationsModule,
     ShopModule,
     BlogModule,
+    SharedModule,
   ],
 })
 export class AppModule {}
