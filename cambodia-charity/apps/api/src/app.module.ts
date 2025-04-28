@@ -6,6 +6,7 @@ import { DonationsModule } from './donations/donations.module';
 import { ShopModule } from './shop/shop.module';
 import { BlogModule } from './blog/blog.module';
 import { SharedModule } from '@shared/shared.module';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [
@@ -24,5 +25,6 @@ import { SharedModule } from '@shared/shared.module';
     BlogModule,
     SharedModule,
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}

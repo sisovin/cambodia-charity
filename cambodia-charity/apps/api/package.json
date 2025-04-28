@@ -10,7 +10,10 @@
     "test": "pnpm test",
     "test:watch": "pnpm test --watch",
     "test:cov": "pnpm test --coverage",
-    "lint": "pnpm lint '{src,test}/**/*.ts'"
+    "lint": "pnpm lint '{src,test}/**/*.ts'",
+    "test:integration": "jest --config jest.integration.config.js",
+    "test:e2e": "jest --config jest.e2e.config.js",
+    "build:docker": "docker build -t api ."
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",

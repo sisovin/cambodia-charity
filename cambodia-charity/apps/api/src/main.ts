@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { ResponseInterceptor } from '@shared/interceptors/response.interceptor';
+import { HealthController } from './health/health.controller';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,6 +16,9 @@ async function bootstrap() {
 
   // Set up global response interceptor
   app.useGlobalInterceptors(new ResponseInterceptor());
+
+  // Add health check endpoint
+  app.use('/health', HealthController);
 
   await app.listen(4000);
 }

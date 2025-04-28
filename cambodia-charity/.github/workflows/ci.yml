@@ -26,11 +26,32 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      - name: Run unit tests
         run: npm test
+
+      - name: Run integration tests
+        run: npm run test:integration
+
+      - name: Run end-to-end tests
+        run: npm run test:e2e
 
       - name: Build project
         run: npm run build
+
+      - name: Build Docker images
+        run: |
+          docker build -t web ./apps/web
+          docker build -t api ./apps/api
+
+      - name: Push Docker images to container registry
+        run: |
+          docker tag web registry.example.com/web:latest
+          docker tag api registry.example.com/api:latest
+          docker push registry.example.com/web:latest
+          docker push registry.example.com/api:latest
+
+      - name: Deploy Docker containers to production
+        run: echo "Deploying Docker containers to production..."
 
       - name: Deploy to staging
         if: github.ref == 'refs/heads/staging'
